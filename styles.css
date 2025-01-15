@@ -1,0 +1,100 @@
+body {
+    margin: 20px;
+    /*
+    Challenge:
+    Find a web safe font you like, and add it 
+    to your card.
+    */
+    font-family: Garamond, serif ;
+}
+
+.avatar-container {
+    width: 120px;
+    height: 158px;
+    margin-top: 10px;
+    margin-right: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits:false;    
+}
+.avatar-container::after,.avatar-container::before {
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #FF7B00,#FF8800,#FF9500,#FFA200,#FFAA00,#FFB700,#FFC300,#FFD000,#FFDD00,#FFEA00,#FF7B00);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 16px;
+    animation: 4s spin linear infinite;
+}
+
+.avatar-container::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle : 0deg;
+    }
+    to {
+        --angle:360deg;
+    }
+}
+
+.avatar {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+
+.card {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    background: #14213d;
+    color: #fca311;
+    border-bottom: 8px solid #fca311;
+    border-radius: 5px;
+        
+    /*
+    Challenge:
+    Find a color palette you like on Coolors.co
+    and use it in your business card.
+     */
+}
+
+.details {
+     text-shadow: 4px 2px #000;
+}
+
+.border-blue {
+    border: 1px dotted blue;
+}
+
+/*
+Stretch goals:
+Find other ways you can personalize 
+the design of your business card, e.g.:
+- change the border(s)
+- add border radius
+- shuffle the layout
+- shadows        🤯
+- hover effects  🤯🤯 
+- animations     🤯🤯🤯
+*/
+
